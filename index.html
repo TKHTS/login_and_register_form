@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="./design.css">
+    <title>JS project</title>
+   </head>
+
+<body>
+
+    <button id="loginButton">Login</button>
+    <button id="registerButton">Register</button>
+
+    <!-- == Login modal start == -->
+    <div id="modal_overlay_login" class="modal_overlay">
+        <div id="modal_overlay_login_content" class="madal_content">
+            <div id="modal_login_close">
+                X&nbsp;close
+            </div>
+            <!-- == register forms start == -->
+            <form id="loginForm">
+                <input type="username">
+                <input type="password">
+                <br>
+                <button type="submit" value="login">Login</button>
+            </form>
+            <!-- == register forms end == -->
+        </div>
+    </div>
+    <!-- == Login modal end == -->
+
+    <!-- == Register modal start == -->
+    <div id="modal_overlay_register" class="modal_overlay">
+        <div id="modal_overlay_register_content" class="madal_content">
+            <div id="modal_register_close">
+                X&nbsp;close
+            </div>
+
+            <!-- == register forms start == -->
+            <form id="registerForm">
+                <input id="username" type="text" placeholder="Username">
+                <input id="firstname" type="text" placeholder="First Name">
+                <input id="lastname" type="text" placeholder="Last Name">
+                <input id="phone" type="number" placeholder="Phone number">
+                <input id="email" type="email" placeholder="Email">
+
+                <div id="choose_classes">
+                    English Class<input type="radio" name="classes" value="english">
+                    Career Class<input type="radio" name="classes" value="career" checked>
+                </div>
+
+                <div id="selectCourse" name="selectCourseForm">
+                    <!-- course list will appear here -->
+                </div>
+
+                <input id="password" type="password" placeholder="Password">
+                <br>
+                <button type="submit" value="register">Register</button>
+            </form>
+            <!-- == register forms end == -->
+
+        </div>
+    </div>
+    <!-- == Register modal end == -->
+
+   <script src="script.js"></script>
+    
+</body>
+
+</html>
