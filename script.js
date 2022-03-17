@@ -175,37 +175,6 @@ lastname.addEventListener('keypress', (event) => {
 });
 
 
-
-//If there is a blank form in register, it will prevent submitting.
-register_form.addEventListener('submit', (event) => {
-
-    // This is for check box
-    if (!checkRadioInput(register_form.classes)) {
-        event.preventDefault();
-        choose_classes.style.backgroundColor = 'yellow';
-    }
-
-    // This is for other type of input
-    if (!checkInput(register_form)) {
-        event.preventDefault();
-        alert("Please fill in all the form");
-    }
-})
-
-//If the form was focused, this function will reset the color.
-for (let i = 0; i < register_form.length; i++) {
-    register_form[i].addEventListener('focus', () => {
-        colorChange(register_form[i]);
-    })
-}
-//If user select radio button, this function will reset the background color.
-choose_classes.addEventListener('click', () => {
-    colorChange(choose_classes);
-})
-
-//  <== Register form end==>
-
-
 // course_number (key) => [subject, gpa] (value)
 let WD_course = new Map([[1, { subject: "html", gpa: 0 }], [2, { subject: "CSS", gpa: 0 }], [3, { subject: "JS", gpa: 4 }], [4, { subject: "JS2", gpa: 0 }], [5, { subject: "PHP", gpa: 0 }], [6, { subject: "CMS", gpa: 0 }]]);
 let UX_course = new Map([[1, { subject: "Fundamentals of UX", gpa: 0 }], [2, { subject: "Fundamentals for UX Design", gpa: 0 }], [3, { subject: "Visual Design for UX", gpa: 0 }], [4, { subject: "Design Tools for UX", gpa: 0 }], [5, { subject: "Introduction to Quality Assurance for UX", gpa: 0 }], [6, { subject: "Preparing UX Professionals for the Workplace", gpa: 0 }]]);
@@ -333,19 +302,42 @@ let program_choose = (valueFromSelectTag) => {
     }
 }
 
-//If user choose English, it makes instance using ESL_Student class.
-//If user choose Career, it makes instance using Career_Student class.
-
-let newStudent;
-switch (choose_classes_value) {
-    case 'english':
-        newStudent = new ESL_Student(username.value, firstname.value, lastname.value, phone.value, email.value, choose_classes_value, selectCourseForm.value, password.value, active_course_number_career, program_choose(selectCourseForm.value));
-        break;
-    case 'career':
-        newStudent = new Career_Student(username.value, firstname.value, lastname.value, phone.value, email.value, choose_classes_value, selectCourseForm.value, password.value, active_course_number_career, program_choose(selectCourseForm.value));
-        break;
+//If the form was focused, this function will reset the color.
+for (let i = 0; i < register_form.length; i++) {
+    register_form[i].addEventListener('focus', () => {
+        colorChange(register_form[i]);
+    })
 }
+//If user select radio button, this function will reset the background color.
+choose_classes.addEventListener('click', () => {
+    colorChange(choose_classes);
+})
 
 
+//If there is a blank form in register, it will prevent submitting.
+register_form.addEventListener('submit', (event) => {
+
+    // This is for check box
+    if (!checkRadioInput(register_form.classes)) {
+        event.preventDefault();
+        choose_classes.style.backgroundColor = 'yellow';
+    } else if (!checkInput(register_form)) {
+        event.preventDefault();
+        alert("Please fill in all the form");
+    } else {
+        //If user choose English, it makes instance using ESL_Student class.
+        //If user choose Career, it makes instance using Career_Student class.
+        let newStudent;
+        switch (choose_classes_value) {
+            case 'english':
+                newStudent = new ESL_Student(username.value, firstname.value, lastname.value, phone.value, email.value, choose_classes_value, selectCourseForm.value, password.value, active_course_number_career, program_choose(selectCourseForm.value));
+                break;
+            case 'career':
+                newStudent = new Career_Student(username.value, firstname.value, lastname.value, phone.value, email.value, choose_classes_value, selectCourseForm.value, password.value, active_course_number_career, program_choose(selectCourseForm.value));
+                break;
+        }
+    }
+})
+//  <== Register form end==>
 
 
