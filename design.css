@@ -1,30 +1,70 @@
 
-        .modal_overlay {
-            z-index: 2;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            opacity: 0.4;
-            display: none;
-        }
+#loginButton{
+    width: 100px;
+    height: 50px;
+    background-color: skyblue;
+    
+}
 
-        .madal_content {
-            z-index: 3;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
-            background-color: white;
-            display: none;
-        }
+#registerButton{
+    width: 100px;
+    height: 50px;
+    background-color: lightgoldenrodyellow;
+}
 
-        #modal_login_close,
-        #modal_register_close {
-            cursor: pointer;
-        }
+#loginForm{
+    width: 100px;
+    height: 50px;
+    padding: 10% 20%;
+}
 
+#registerForm{
+    width: 100px;
+    height: 100px;
+    padding-left: 20%;
+    color:black ;
+}
+
+    .modal_overlay {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        left: 0;                        
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.4;
+        display: none;
+    }
+
+
+    .madal_content {
+        z-index: 3;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 400px;
+        background-color: goldenrod;
+        display: none;
+    }
+
+    .modal_overlay .modal_content.btn{ 
+        width: 15px;
+        height: 15px;
+    }
+
+
+    #modal_login_close,
+    #modal_register_close {
+        cursor: pointer;
+    }
+
+.backgrond_Css{
+    background: url(./img/background.jpg); 
+    background-position: right 10%;
+    background-repeat: no-repeat;
+    padding: 500px;   
+
+}
